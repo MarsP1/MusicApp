@@ -16,5 +16,9 @@ const songs = [
         title: "Pharrell Williams - Happy",
         source: "/MP3s/Pharrell Williams - Happy.mp3"
     },
+    {
+        title: "Khamari - Apollo Eighteen",
+        source: "/MP3s/Khamari - Apollo Eighteen.mp3"
+    },
 ];
 export default songs;

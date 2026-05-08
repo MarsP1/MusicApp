@@ -28,9 +28,7 @@ function Test() {
     const previousSong = () => {
         let previousIndex = songCurrent - 1;
         if (previousIndex < 0) {
-            setSongCurrent(0);
-            playSong(0);
-            return;
+            previousIndex = 0;
         };
         setSongCurrent(previousIndex);
         playSong(previousIndex);
