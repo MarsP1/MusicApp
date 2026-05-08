@@ -13,9 +13,10 @@
     "windows": [
       {
         "title": "MusicApp",
-        "width": 800,
+        "width": 400,
         "height": 600,
-        "resizable": true,
+        "decorations": true,
+        "resizable": false,
         "fullscreen": false
       }
     ],
