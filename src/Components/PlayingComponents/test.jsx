@@ -38,8 +38,15 @@ function Test() {
             
             <h3 style={{ fontWeight: "normal" }}>{TestPlaylist[songCurrent].title}</h3>
 
-            <audio ref={audioRef} controls  />
+            <audio 
+                ref={audioRef}
+                onEnded={nextSong} 
+                controls
+
+            />
+
             <br></br>
+            
             <button onClick={previousSong}>
                 Previous
             </button>
