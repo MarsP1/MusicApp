@@ -5,8 +5,8 @@ const songs = [
     },
 
     {
-        title: "JasonTheWeen - Summer UpTown",
-        source: "/MP3s/JasonTheWeen - Summer Uptown.mp3"
+        title: "JasonTheWeen - Summer UpTown V2",
+        source: "/MP3s/JasonTheWeen - Summer UptownV2.mp3"
     },
     {
         title: "Lykke Li - Little Bit",

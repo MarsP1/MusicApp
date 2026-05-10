@@ -1,17 +1,22 @@
 import {useState, useRef} from "react";
 
 import TestPlaylist from "../../Data/TestPlaylist.jsx";
+import PlayIcon from "../../assets/PlayIcon.svg";
 
 
 function Test() {
     
 
     const audioRef = useRef(null);
-
-    
     const [songCurrent, setSongCurrent] = useState(0);
+
+
     const playSong = (index) => {
         audioRef.current.src = TestPlaylist[index].source;
+        if (!audioRef.current) {
+            return;
+        };
+        audioRef.current.load();
         audioRef.current.play();
     };
 
@@ -33,6 +38,8 @@ function Test() {
         setSongCurrent(previousIndex);
         playSong(previousIndex);
     };
+
+
     return (
         <div>
             
@@ -40,9 +47,10 @@ function Test() {
 
             <audio 
                 ref={audioRef}
-                onEnded={nextSong} 
+                onEnded={nextSong}
+                preload="auto" 
                 controls
-
+                
             />
 
             <br></br>
@@ -52,13 +60,15 @@ function Test() {
             </button>
 
             <button onClick={() => playSong(songCurrent)}>
-                Play
+                <img src={PlayIcon}/>
             </button>
 
             <button onClick={nextSong}>
                 Next
             </button>
+            
         </div>
+        
     );
 }
 export default Test;
