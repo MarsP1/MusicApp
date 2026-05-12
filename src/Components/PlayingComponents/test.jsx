@@ -1,22 +1,31 @@
 import {useState, useRef} from "react";
 
+import { convertFileSrc } from "@tauri-apps/api/core";
+import { join } from "@tauri-apps/api/path";
+import { resolveResource } from "@tauri-apps/api/path";
+
+
+
 import TestPlaylist from "../../Data/TestPlaylist.jsx";
 import PlayIcon from "../../assets/PlayIcon.svg";
 
 
 function Test() {
     
-
     const audioRef = useRef(null);
     const [songCurrent, setSongCurrent] = useState(0);
 
 
-    const playSong = (index) => {
-        audioRef.current.src = TestPlaylist[index].source;
+    const playSong = async (index) => { 
         if (!audioRef.current) {
             return;
-        };
-        audioRef.current.load();
+        }
+
+        const fileSource = TestPlaylist[index].source;
+        const resourcePath = await resolveResource(await join("MP3s", fileSource));
+        const src = convertFileSrc(resourcePath);
+
+        audioRef.current.src = src;
         audioRef.current.play();
     };
 
@@ -59,13 +68,15 @@ function Test() {
                 Previous
             </button>
 
-            <button onClick={() => playSong(songCurrent)}>
-                <img src={PlayIcon}/>
+            <button className="Play-Button" onClick={() => playSong(songCurrent)}>
+                <img src={PlayIcon} className="Play-Icon"/>
             </button>
 
             <button onClick={nextSong}>
                 Next
             </button>
+
+        
             
         </div>
         
