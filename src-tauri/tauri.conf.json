@@ -10,6 +10,7 @@
     "beforeBuildCommand": "npm run build"
   },
   "app": {
+    
     "windows": [
       {
         "title": "MusicApp",
@@ -18,7 +19,8 @@
         "decorations": false,
         "resizable": false,
         "fullscreen": false,
-        "transparent": false
+        "transparent": true
+        
       }
     ],
     "security": {

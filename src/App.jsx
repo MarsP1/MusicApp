@@ -1,15 +1,21 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import "./CSS/App.css"
 
 import Home from "./Pages/HomePage.jsx"
 
-import "./CSS/App.css"
+
+
+
 
 function App() {
 
   return (
     <>
-      <div className="TopBar"></div>
-      <Home/>
+      <div className="AppWindow">
+        <div className="TopBar"></div>
+        <Home/>
+      </div>
     </>
   )
 }
