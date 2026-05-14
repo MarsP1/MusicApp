@@ -1,6 +1,8 @@
-const playlists = {
-    playlist1: {
+const playlists = [
+    {
+        id: 1,
         name: "Playlist 1",
+        thumbnail: "https://media.discordapp.net/attachments/710615755254661250/1503870692008001788/maxresdefault.png?ex=6a04ec39&is=6a039ab9&hm=942e88eba97237372c142e3958afba38610eee80a6a71428a8c86ad23065f4d4&=&format=webp&quality=lossless",
         songs: [
             {   
                 title: "Maroon - Sugar",
@@ -23,12 +25,25 @@ const playlists = {
                 source: "Khamari - Apollo Eighteen.mp3"
             }
         ]
-    },
-
-    playlist2: {
+    },    
+    {
+        id: 2,
         name: "Playlist 2",
+        thumbnail: "https://i.pinimg.com/1200x/21/1c/35/211c354548a872dc63622437075c772b.jpg",
+        songs: []
+    },
+        {
+        id: 3,
+        name: "Playlist 3",
+        thumbnail: "https://i.pinimg.com/1200x/60/f7/81/60f781946aa41b1c22d755da984f3fa4.jpg",
+        songs: []
+    },
+        {
+        id: 4,
+        name: "Playlist 4",
+        thumbnail: "https://i.pinimg.com/736x/81/db/76/81db76f4fed6412ffd5982e15fcad036.jpg",
         songs: []
     }
-};
+];
 
 export default playlists;

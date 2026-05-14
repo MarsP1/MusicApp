@@ -1,19 +1,20 @@
 import { useParams } from "react-router-dom"
 
-import Library from "../Components/HomeComponents/Library";
-
-
-
+import Playlist from "../Components/PlayerComponents/PlayPlaylist";
+import TestPlaylist from "../Data/TestPlaylist.jsx";
 
 
 function Player() {
 
     const { id } = useParams();
+    
+    
 
     return (
 
         <>
-            <Library playerid={id} />
+            <Playlist playerid={id}/>
+            
 
         </>
     )

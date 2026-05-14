@@ -1,4 +1,4 @@
-import Test from "../Components/PlayingComponents/test.jsx";
+import Test from "../Components/PlayerComponents/test.jsx";
 import Library from "../Components/HomeComponents/Library.jsx";
 
 import "../CSS/Library.css"
