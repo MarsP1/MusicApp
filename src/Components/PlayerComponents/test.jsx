@@ -6,7 +6,7 @@ import { resolveResource } from "@tauri-apps/api/path";
 
 
 import TestPlaylist from "../../Data/TestPlaylist.jsx";
-import PlayIcon from "../../assets/PlayIcon.svg";
+import PlayIcon from "../../assets/PlayButton.svg";
 
 
 function Test() {
