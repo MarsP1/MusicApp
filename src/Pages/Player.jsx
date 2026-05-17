@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import Playlist from "../Components/PlayerComponents/PlayPlaylist";
 import TestPlaylist from "../Data/TestPlaylist.jsx";
 
+import "../CSS/Player.css";
 
 function Player() {
 

@@ -6,7 +6,8 @@ const playlists = [
         songs: [
             {   
                 title: "Maroon - Sugar",
-                source: "Maroon 5 - Sugar.mp3"
+                source: "Maroon 5 - Sugar.mp3",
+                art: "https://a1.mzstatic.com/r40/Music115/v4/ac/20/32/ac203235-b03b-0e60-e03d-1ea1ee53aceb/14UMGIM31675.rgb.jpg"
             },
             {
                 title: "JasonTheWeen - Summer UpTown V2",

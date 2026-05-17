@@ -64,48 +64,64 @@ function Playlist({playerid}) {
 
     return(
 
-        <div>
+        <div className="Playlist-Container">
             <div className="TitleBackground-Playlist">
-                <h1 className="Title-Playlist">{playlist.name}</h1>
+                <h1 className="Title-Playlist">{playlist.title}</h1>
             </div>
             <audio
                 ref={audioRef}
                 onEnded={nextSong}
                 preload="auto" 
-                controls
+                
             />
 
+            <div className="CoverFrame-Playlist">
+                <img className="CoverBackground-Playlist" src={CoverWindow}/>
+                <img className="CoverImage-Playlist" src={playlist.art} />
+            </div>
             
-            <img className="CoverWindow-Playlist" src={CoverWindow}/>
             
             <div className="ControlsPanel-Playlist">
-                <button>
-                    <img className="PreviousButton-Playlist" src={PreviousButton}/>
-                </button>
-                <img className="LeftBracket-Playlist" src={LeftBracket}/>
+                <img className="ControlsBackground" src={ControlsWindow}/>
+                <div className="LeftSide-Panel">
 
-                <img className="Menu-Playlist" src={Menu}/>
+                    <button onClick={previousSong}>
+                        <img className="PreviousButton-Playlist" src={PreviousButton}/>
+                    </button>
+                    <button>
+                        <img className="LeftBracket-Playlist" src={LeftBracket}/>
+                    </button>
+                    <button>
+                        <img className="Menu-Playlist" src={Menu}/>
+                    </button>
+                </div>
 
-                <img className="PlayIcon-Playlist" src={PlayIcon}/>
-                <img className="ForwardButton-Playlist" src={ForwardButton}/>
-                <img className="RightBracket-Playlist" src={RightBracket}/>
-                <img className="Circles-Playlist" src={Circles}/>
+                <div className="Center-Panel">
+                    <button onClick={() => playSong(songCurrent)}>
+                        <img className="PlayIcon-Playlist" src={PlayIcon}/>
+                    </button>
+                </div>
+                
+                <div className="RightSide-Panel">
 
+                    <button onClick={nextSong}>
+                        <img className="ForwardButton-Playlist" src={ForwardButton}/>
+                    </button>
+
+                    <button>    
+                        <img className="RightBracket-Playlist" src={RightBracket}/>
+                    </button>
+
+                    <button>
+                        <img className="Circles-Playlist" src={Circles}/>
+                    </button>
+
+                </div>
             </div>
-       
-
-            <button onClick={previousSong}>
-                Previous
-            </button> 
-
-            <button onClick={() => playSong(songCurrent)}>
-                Play
-            </button>
-
-            <button onClick={nextSong}>
-                Next
-            </button>                                             
+                                      
         </div>
     )
 };
 export default Playlist;
+
+//<img className="CoverWindow-Playlist" src={CoverWindow}/>
