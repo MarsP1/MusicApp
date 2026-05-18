@@ -5,24 +5,24 @@ const playlists = [
         thumbnail: "https://media.discordapp.net/attachments/710615755254661250/1503870692008001788/maxresdefault.png?ex=6a04ec39&is=6a039ab9&hm=942e88eba97237372c142e3958afba38610eee80a6a71428a8c86ad23065f4d4&=&format=webp&quality=lossless",
         songs: [
             {   
-                title: "Maroon - Sugar",
+                title: "Sugar - Maroon 5 ",
                 source: "Maroon 5 - Sugar.mp3",
                 art: "https://a1.mzstatic.com/r40/Music115/v4/ac/20/32/ac203235-b03b-0e60-e03d-1ea1ee53aceb/14UMGIM31675.rgb.jpg"
             },
             {
-                title: "JasonTheWeen - Summer UpTown V2",
-                source: "JasonTheWeen - Summer UptownV2.mp3"
+                title: "Summer UpTown - JasonTheWeen",
+                source: "JasonTheWeen - Summer Uptown.mp3"
             },
             {
-                title: "Lykke Li - Little Bit",
+                title: "Little Bit - Lykke Li",
                 source: "Lykke Li - Little Bit.mp3"
             },
             {
-                title: "Pharrell Williams - Happy",
+                title: "Happy - Pharrell Williams",
                 source: "Pharrell Williams - Happy.mp3"
             },
             {
-                title: "Khamari - Apollo Eighteen",
+                title: "Apollo Eighteen - Khamari",
                 source: "Khamari - Apollo Eighteen.mp3"
             }
         ]

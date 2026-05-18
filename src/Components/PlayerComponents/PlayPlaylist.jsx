@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useRef, useState } from "react";
 
 import { convertFileSrc } from "@tauri-apps/api/core";
@@ -5,6 +6,8 @@ import { join } from "@tauri-apps/api/path";
 import { resolveResource } from "@tauri-apps/api/path";
 
 import TestPlaylist from "../../Data/TestPlaylist.jsx";
+
+import TitleWindow from "../../assets/TitleWindow.svg";
 
 import CoverWindow from "../../assets/CoverWindow.svg";
 import ControlsWindow from "../../assets/ControlsWindow.svg";
@@ -64,64 +67,64 @@ function Playlist({playerid}) {
 
     return(
 
+
+        
         <div className="Playlist-Container">
-            <div className="TitleBackground-Playlist">
-                <h1 className="Title-Playlist">{playlist.title}</h1>
+            <div className="Title-Container">
+                <img src={TitleWindow} className="TitleWindow"/>
+                <h3 className="TitleText" style={{ fontWeight: "normal" }}>{playlist.songs[songCurrent].title}</h3>
             </div>
-            <audio
-                ref={audioRef}
-                onEnded={nextSong}
-                preload="auto" 
+
+            <div className="Cover-Container">
+                <img src={CoverWindow} className="CoverWindow"/>
+                <img src={playlist.songs[songCurrent].art} className="CoverArt"/>
+            </div>
                 
-            />
+            <div className="Controls-Container">
+                <audio className="AudioPlayer"
+                    ref={audioRef}
+                    onEnded={nextSong}
+                    preload="auto" 
+                    controls
+                 />
+                <img className="ControlsWindow" src={ControlsWindow}/>
 
-            <div className="CoverFrame-Playlist">
-                <img className="CoverBackground-Playlist" src={CoverWindow}/>
-                <img className="CoverImage-Playlist" src={playlist.art} />
-            </div>
-            
-            
-            <div className="ControlsPanel-Playlist">
-                <img className="ControlsBackground" src={ControlsWindow}/>
-                <div className="LeftSide-Panel">
+                <div className="LeftSide-Frame">
+                    <button onClick={previousSong} className="PreviousButton-Button">
+                        <img src={PreviousButton} className="PreviousButton-Icon" />
+                    </button>
 
-                    <button onClick={previousSong}>
-                        <img className="PreviousButton-Playlist" src={PreviousButton}/>
-                    </button>
-                    <button>
-                        <img className="LeftBracket-Playlist" src={LeftBracket}/>
-                    </button>
-                    <button>
-                        <img className="Menu-Playlist" src={Menu}/>
+                 
+                    <img src={LeftBracket} className="LeftBracket-Icon" />
+                    
+
+                    <Link to="/" className="Menu-Link">
+                        <img src={Menu} className="Menu-Icon" />
+                    </Link>
+                </div>
+                          
+                <div className="Center-Frame">
+                    <button onClick={() => playSong(songCurrent)} className="PlayButton-Button">
+                        <img src={PlayIcon} className="PlayButton-Icon" />
                     </button>
                 </div>
-
-                <div className="Center-Panel">
-                    <button onClick={() => playSong(songCurrent)}>
-                        <img className="PlayIcon-Playlist" src={PlayIcon}/>
+          
+                <div className="RightSide-Frame">
+                    <button onClick={nextSong} className="ForwardButton-Button">
+                        <img src={ForwardButton} className="ForwardButton-Icon"/>
                     </button>
-                </div>
                 
-                <div className="RightSide-Panel">
-
-                    <button onClick={nextSong}>
-                        <img className="ForwardButton-Playlist" src={ForwardButton}/>
+                    <img src={RightBracket} className="RightBracket-Icon"/>
+                
+                    <button className="Circles-Button">
+                        <img src={Circles} className="Circles-Icon"/>
                     </button>
-
-                    <button>    
-                        <img className="RightBracket-Playlist" src={RightBracket}/>
-                    </button>
-
-                    <button>
-                        <img className="Circles-Playlist" src={Circles}/>
-                    </button>
-
-                </div>
-            </div>
-                                      
+                </div> 
+            
+            </div>                              
         </div>
     )
 };
 export default Playlist;
 
-//<img className="CoverWindow-Playlist" src={CoverWindow}/>
+//

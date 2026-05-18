@@ -1,89 +1,138 @@
-.ControlsPanel-Playlist {
+.Playlist-Container {
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+
+    width: 382px;
+    height: 563px;
+    
+}
+
+.Title-Container {
     position: relative;
+    width: 326px;
+    height: 62px;
+}
+
+.TitleWindow {
+    position: absolute;
+    z-index: 0;
+
+    
+}
+.TitleText {
+    position: absolute;
+    z-index: 1;
+    
+    top: 13%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    font-size: calc(2vw + 2vh + 1vmin);
+    font-weight: 600;
+
+
+    text-overflow: ellipsis;
+    
+}
+
+.Cover-Container {
+    position: relative;
+    top: 16px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
 
     width: 360px;
-    height: 165px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 330px;
 }
 
-.ControlsBackground {
+.CoverWindow {
     position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 0;
+   
+    width: 360px;
+    height: 330px;
 }
 
-.LeftSide-Panel,
-.Center-Panel,
-.RightSide-Panel {
+.CoverArt {
+    position: absolute;
+
+    width: 354px;
+    height: 324px;
+    border-radius: 26px;
+    
+    object-fit: cover;
+
+}
+
+.Controls-Container {
     position: relative;
-    z-index: 1;
+    top: 32px;
+
+    display: inline-flex;
 }
 
-.LeftSide-Panel,
-.RightSide-Panel {
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+.AudioPlayer {
+    display: none;
 }
 
-.Center-Panel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 100%;
-    padding: 0 30px;
+.LeftSide-Frame, .Center-Frame, .RightSide-Frame {
+    position: absolute;
 }
 
-.PreviousButton-Playlist,
-.ForwardButton-Playlist {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-}
-
-.LeftBracket-Playlist,
-.RightBracket-Playlist {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-}
-
-.Menu-Playlist,
-.Circles-Playlist {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-}
-
-.PlayIcon-Playlist {
-    width: 96px;
-    height: 96px;
-    object-fit: contain;
-}
-
-button {
+.PreviousButton-Button, .PlayButton-Button, .ForwardButton-Button, .Circles-Button {
     background: transparent;
     border: none;
-    outline: none;
-    box-shadow: none;
+}
 
-    padding: 0;
-    margin: 0;
+.LeftSide-Frame {
+    width: 89px;
+    height: 115px;
 
-    cursor: pointer;
+    top: 28px;
+    right: 250px;
 
     display: flex;
+    
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+
 }
+
+.Center-Frame {
+    width: 126.78px;
+    height: 134.28px;
+
+    top: 11px;
+    right: 120px;
+}
+
+.RightSide-Frame {
+    width: 89px;
+    height: 115px;
+
+    top: 28px;
+    right: 20px;
+
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.RightBracket-Icon, .Circles-Button {
+    transform: translateY(-5px);
+}
+
+
