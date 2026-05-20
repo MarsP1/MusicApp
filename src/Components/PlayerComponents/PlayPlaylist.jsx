@@ -11,7 +11,9 @@ import TitleWindow from "../../assets/TitleWindow.svg";
 
 import CoverWindow from "../../assets/CoverWindow.svg";
 import SeekWindow from "../../assets/SeekWindow.svg";
-import SeekCircle from "../../assets/SeekCircle.svg";
+import SeekCircle1 from "../../assets/SeekCircle1.svg";
+import SeekCircle2 from "../../assets/SeekCircle2.svg";
+import SeekCircle3 from "../../assets/SeekCircle3.svg";
 import ControlsWindow from "../../assets/ControlsWindow.svg";
 import PreviousButton from "../../assets/PreviousButton.svg";
 import LeftBracket from "../../assets/Left-Bracket.svg";
@@ -22,10 +24,10 @@ import ForwardButton from "../../assets/ForwardButton.svg";
 import RightBracket from "../../assets/Right-Bracket.svg";
 import Circles from "../../assets/circles.svg";
 
-
 function Playlist({playerid}) {
 
     const audioRef = useRef(null);
+    const [currentSeekCircle, setCurrentSeekCircle] = useState(1);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [songCurrent, setSongCurrent] = useState(0);
@@ -47,10 +49,20 @@ function Playlist({playerid}) {
 
     useEffect(() => {
         if (audioRef.current) {
-            audioRef.current.volume = 0.3;
+            audioRef.current.volume = 0.2;
         }
 
     }, []);
+
+    const seekCircles = {
+        1: SeekCircle1,
+        2: SeekCircle2,
+        3: SeekCircle3
+    };
+
+    const changeSeekCircle = () => {
+        setCurrentSeekCircle(prev => prev == 3 ? 1 : prev + 1);    
+    };
 
     const handleSeek = (e) => {
         const time = Number(e.target.value);
@@ -110,7 +122,6 @@ function Playlist({playerid}) {
         }
     }
 
-
     const nextSong = async () => {
         let nextIndex = songCurrent + 1;
         if (nextIndex >= playlist.songs.length) {
@@ -154,7 +165,7 @@ function Playlist({playerid}) {
                 <img src={displayInfo && playlistThumbnail || playlist.songs[songCurrent]?.art} className="CoverArt"/>
                 <div className="Seek-Container">
                     <img src={SeekWindow} className="SeekWindow"/>
-                    <img src={SeekCircle} style={{left: `${duration ? (currentTime / duration) * 100 : 0}%`}} className="SeekCircle"/>
+                    <img src={seekCircles[currentSeekCircle]} style={{left: `${duration ? (currentTime / duration) * 100 : 0}%`}} className="SeekCircle"/>
                         <input
                             type="range"
                             min="0"
@@ -205,7 +216,7 @@ function Playlist({playerid}) {
                 
                     <img src={RightBracket} className="RightBracket-Icon"/>
                 
-                    <button className="Circles-Button">
+                    <button onClick={changeSeekCircle} className="Circles-Button">
                         <img src={Circles} className="Circles-Icon"/>
                     </button>
                 </div> 
@@ -216,4 +227,3 @@ function Playlist({playerid}) {
 };
 export default Playlist;
 
-//

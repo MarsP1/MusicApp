@@ -6,11 +6,14 @@
     align-items: center;
     flex-direction: column;
 
-    width: 382px;
-    height: 563px;
+    width: 400px;
+    height: 600px;
 
     user-select: none;
     -webkit-user-select: none;
+
+    top: 7.5px;
+
     
 }
 
@@ -185,4 +188,23 @@
     transform: translateY(-8px);
 }
 
+.PlayButton-Button,
+.PreviousButton-Button,
+.ForwardButton-Button,
+.Circles-Button,
+.CloseWindow,
+.Menu-Link {
+  transition: transform 0.08s ease, filter 0.08s ease;
+  cursor: pointer;
+}
+
+.PlayButton-Button:active,
+.PreviousButton-Button:active,
+.ForwardButton-Button:active,
+.Circles-Button:active,
+.CloseWindow:active,
+.Menu-Link:active {
+  transform: scale(0.95);
+  filter: brightness(0.8);
+}
 

@@ -1,23 +1,39 @@
 
 html, body, #root {
   overflow: hidden;
-  background: rgba(193, 225, 193, 0.8);
+
+  margin: 0;
+  background: transparent;
+
 
 }
 
+.AppWindow {
+  width: 100vw;
+  height: 100vh;
+
+  border: 2px solid #394635;
+  border-radius: 20px;
+  box-sizing: border-box;
+  
+  background: rgba(207, 232, 201, 0.8);
+}
+
 img {
-    user-select: none;
-    -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
 
-    -webkit-user-drag: none;
+  -webkit-user-drag: none;
 
 
-    pointer-events: none;
+  pointer-events: none;
 }
 
 
 .TopBar {
   position: fixed;
+  display: flex;
+  justify-content: flex-end;
 
   top: 0;
   left: 0;
@@ -27,11 +43,29 @@ img {
 
   -webkit-app-region: drag;
 
-  z-index: 999;
+  z-index: 3;
 
   background: transparent;
 }
 
-.controls {
+.CloseWindow {
+  display: flex;
+  position: relative;
+
+  z-index: 4;
+
+ 
   -webkit-app-region: no-drag;
+  background: transparent;
+
+  border: none;
+
+  top: 7px;
+  right: 7px;
+  
+  
+}
+
+.CloseWindow-button:hover {
+  background: #5bbec3;
 }
