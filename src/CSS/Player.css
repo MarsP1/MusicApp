@@ -169,7 +169,7 @@
     height: 134.28px;
 
     top: 11px;
-    right: 120px;
+    right: 121px;
 }
 
 .RightSide-Frame {
@@ -188,7 +188,8 @@
 }
 
 .RightBracket-Icon, .Circles-Button {
-    transform: translateY(-8px);
+    position: relative;
+    top: -8px;
 }
 
 .PlayButton-Button,
