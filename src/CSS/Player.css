@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 .Playlist-Container {
     position: absolute;
 
@@ -34,15 +35,16 @@
     position: absolute;
     z-index: 1;
     
-    top: 13%;
+    top: 20%;
     left: 50%;
     width: 80%;
     transform: translate(-50%, -50%);
 
     text-align: center;
 
-    font-size: calc(2vw + 2vh + 1vmin);
-    font-weight: 600;
+    font-size: calc(1vw + 2vh + 1vmin);
+    color: white;
+    font-family: "Jua", sans-serif;
 
 
     text-overflow: ellipsis;
