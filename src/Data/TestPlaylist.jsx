@@ -213,7 +213,7 @@ const playlists = [
                 source: "Fuel - Hemorrhage (In My Hands).mp3",
                 art: "https://i.scdn.co/image/ab67616d0000b273e02669b28cb76940fc63bed1"
             },
-                        {
+            {
                 title: "Made In Japan - Buck Owens",
                 source: "Buck Owens - Made In Japan.mp3",
                 art: "https://i.scdn.co/image/ab67616d0000b2738e5f97a65d6b8baa73c4d58a"
