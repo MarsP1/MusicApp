@@ -2,7 +2,7 @@ const playlists = [
     {
         id: 1,
         name: "Test",
-        thumbnail: "https://i.ytimg.com/vi/z1e6AQQ4kkY/sddefault.jpg",
+        thumbnail: "https://i.pinimg.com/1200x/60/f7/81/60f781946aa41b1c22d755da984f3fa4.jpg",
         songs: [
             {
                 title: "Little Bit - Lykke Li",
@@ -220,23 +220,7 @@ const playlists = [
             },
         ]
     },
-    { 
-        name: "Playlist 3",
-        thumbnail: "https://i.pinimg.com/1200x/60/f7/81/60f781946aa41b1c22d755da984f3fa4.jpg",
-        songs: [
-
-
-        ]
-    },
-    {
-       
-        name: "Playlist 4",
-        thumbnail: "https://i.pinimg.com/736x/81/db/76/81db76f4fed6412ffd5982e15fcad036.jpg",
-        songs: [
-
-
-        ]
-    }
+    
 ];
 
 export default playlists;

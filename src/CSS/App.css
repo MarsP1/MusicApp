@@ -1,11 +1,8 @@
-
 html, body, #root {
+  background: transparent;
   overflow: hidden;
 
-  margin: 0;
-  background: transparent;
-
-
+  margin: auto;
 }
 
 .AppWindow {
@@ -19,53 +16,27 @@ html, body, #root {
   background: rgba(207, 232, 201, 0.8);
 }
 
-img {
+div, img, a {
   user-select: none;
-  -webkit-user-select: none;
-
   -webkit-user-drag: none;
-
-
-  
 }
 
-
 .TopBar {
-  position: fixed;
   display: flex;
   justify-content: flex-end;
 
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 35px;
-
   -webkit-app-region: drag;
-
-  z-index: 3;
-
-  background: transparent;
 }
 
 .CloseWindow {
   display: flex;
   position: relative;
 
-  z-index: 4;
-
- 
   -webkit-app-region: no-drag;
+  
   background: transparent;
-
   border: none;
 
   top: 7px;
   right: 7px;
-  
-  
-}
-
-.CloseWindow-button:hover {
-  background: #5bbec3;
 }

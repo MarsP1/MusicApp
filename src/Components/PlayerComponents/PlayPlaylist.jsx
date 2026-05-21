@@ -8,7 +8,6 @@ import { resolveResource } from "@tauri-apps/api/path";
 import TestPlaylist from "../../Data/TestPlaylist.jsx";
 
 import TitleWindow from "../../assets/TitleWindow.svg";
-
 import CoverWindow from "../../assets/CoverWindow.svg";
 import SeekWindow from "../../assets/SeekWindow.svg";
 import VolumeWindow from "../../assets/VolumeWindow.svg";
@@ -65,7 +64,6 @@ function Playlist({playerid}) {
         if (audioRef.current) {
             audioRef.current.volume = volume;
         }
-
     }, [volume]);
 
 
@@ -114,9 +112,9 @@ function Playlist({playerid}) {
         setPlayButtonState(false);
     };
 
-    const pauseSong = async () => {
+    const pauseSong = () => {
         
-        await audioRef.current.pause();
+        audioRef.current.pause();
 
         setIsPlaying(false);
         setPlayButtonState(true);
@@ -259,7 +257,7 @@ function Playlist({playerid}) {
 
             <div className="Cover-Container">
                 <img src={CoverWindow} className="CoverWindow"/>
-                <img src={displayInfo && playlistThumbnail || playlist?.songs?.[songCurrent]?.art} className="CoverArt"/>
+                <img src={displayInfo && playlistThumbnail || playlist?.songs?.[songCurrent]?.art} className={displayInfo ? "PlaylistThumbnail" : "CoverArt"}/>
                 
                 {playerMode == "seek" && (
 

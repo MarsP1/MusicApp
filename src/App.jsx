@@ -1,14 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { getCurrentWindow } from "@tauri-apps/api/window";
+import {getCurrentWindow} from "@tauri-apps/api/window";
 
 import "./CSS/App.css";
 
 import Home from "./Pages/HomePage.jsx";
 import Player from "./Pages/Player.jsx";
 
-
-function App() {
-
+function App () {
   const app = getCurrentWindow();
 
   return (

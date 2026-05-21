@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 .Playlist-Container {
     position: absolute;
 
@@ -7,55 +8,48 @@
     align-items: center;
     flex-direction: column;
 
-    width: 400px;
-    height: 600px;
-
-    user-select: none;
-    -webkit-user-select: none;
-
     top: 7.5px;
+
+    width: 400px;
+    height: 600px;  
 }
 
 .Title-Container {
     position: relative;
+    
     width: 326px;
     height: 62px;
 }
 
 .TitleWindow {
     position: absolute;
-    z-index: 0;
-
-    
 }
 .TitleText {
     position: absolute;
-    z-index: 1;
+
+    text-align: center;
     
     top: 20%;
     left: 50%;
-    width: 80%;
+    width: 90%;
     transform: translate(-50%, -50%);
 
-    text-align: center;
-
     font-size: calc(1vw + 2vh + 1vmin);
-    color: white;
     font-family: "Jua", sans-serif;
-
-
-    text-overflow: ellipsis;
+    color: white;
     
+    text-overflow: ellipsis;
 }
 
 .Cover-Container {
     position: relative;
-    top: 16px;
-
+    
     display: flex;
 
     justify-content: center;
     align-items: center;
+
+    top: 16px;
 
     width: 360px;
     height: 330px;
@@ -75,17 +69,27 @@
     height: 316px;
     border-radius: 30px;
     
-    object-fit: cover;
+    object-fit: fill;
+}
 
+.PlaylistThumbnail {
+    position: absolute;
+
+    width: 358px;
+    height: 316px;
+    border-radius: 30px;
+    
+    object-fit: cover;
 }
 
 .Seek-Container {
     position: relative;
-    width: 301px;
-    height: 18px;
 
     top: 140px;
-    right:2px
+    right: 2px;
+
+    width: 301px;
+    height: 18px;
 }
 
 .SeekWindow {
@@ -93,115 +97,83 @@
 
     width: 100%;
     height: 100%;
-
-    pointer-events: none;
 }
 
 .SeekControl {
     position: absolute;
-    inset: 0;
+
+    cursor: pointer;
 
     width: 100%;
     height: 100%;
 
     opacity: 0;
-    cursor: pointer;
-
-    z-index: 2;
 }
 
 .SeekCircle {
     position: absolute;
+
+    pointer-events: none;
 
     top: 50%;
     transform: translate(-50%, -50%);
 
     width: 24px;
     height: 24px;
-
-    pointer-events: none;
-
-    z-index: 1;
 }
 
 .Volume-Container {
     position: relative;   
+    top: 80px;
+    left: 165px;
 
     width: 8px;          
     height: 86px;        
-
-    top: 80px;
-    left: 165px
-
 }
 
 .VolumeWindow {
     position: absolute;
-
-    width: 8px;
-    height: 86px;
-
-    z-index: 2;
-    pointer-events: none;
 }
 
 .VolumeCircle {
     position: absolute;
 
     left: 50%;
-    
-
     transform: translate(-50%, 50%);
 
     width: 16px;                
     height: 15.53px;
-
-    z-index: 4;
-
-    pointer-events: none;
 }
 
 .VolumeTrail {
     position: absolute;
 
-    bottom: 0;
+    bottom: 0;    
+
     left: 50%;
     transform: translateX(-50%);
 
-    width: 7px;                
-    
+    width: 6px;                
 
-    background: #6F8E67;        
-    border-radius: 25px;
-
-    z-index: 3;
-
-    
-}
+    background: #6F8E67;
+}        
 
 .VolumeControl {
     position: absolute;
+
+    appearance: slider-vertical;
+    
+    cursor: pointer;
     
     width: 100%;
     height: 100%;
 
     opacity: 0;
-    cursor: pointer;
-
-    z-index: 5;
-
-    appearance: slider-vertical;
 }
 
 .Controls-Container {
     position: relative;
     top: 32px;
-
-    display: inline-flex;
-}
-
-.AudioPlayer {
-    display: none;
 }
 
 .LeftSide-Frame, .Center-Frame, .RightSide-Frame {
@@ -214,18 +186,17 @@
 }
 
 .LeftSide-Frame {
-    width: 89px;
-    height: 115px;
-
-    top: 28px;
-    right: 250px;
-
     display: flex;
     
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 
+    width: 89px;
+    height: 115px;
+
+    top: 28px;
+    right: 250px;
 }
 
 .Center-Frame {
@@ -237,21 +208,21 @@
 }
 
 .RightSide-Frame {
-    width: 89px;
-    height: 115px;
-
-    top: 28px;
-    right: 20px;
-
     display: flex;
     
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 
+    top: 28px;
+    right: 20px;
+
+    width: 89px;
+    height: 115px;
 }
 .Circles-Container {
     position: relative;
+
     display: inline-flex;
     
     right: 2px;
@@ -259,15 +230,18 @@
 
 .Seek-Circle {
     position: relative;
+
     left: 5px;
 }
 .Shuffle-Circle {
     position: relative;
+
     right: 5px;
 }
 
 .RightBracket-Icon, .Circles-Button {
     position: relative;
+
     top: -8px;
 }
 
@@ -277,8 +251,8 @@
 .Circles-Button,
 .CloseWindow,
 .Menu-Link {
-  transition: transform 0.08s ease, filter 0.08s ease;
-  cursor: pointer;
+    cursor: pointer;
+    transition: transform 0.08s ease, filter 0.08s ease;
 }
 
 .PlayButton-Button:active,
@@ -287,7 +261,7 @@
 .Circles-Button:active,
 .CloseWindow:active,
 .Menu-Link:active {
-  transform: scale(0.95);
-  filter: brightness(0.8);
+    transform: scale(0.95);
+    filter: brightness(0.8);
 }
 
