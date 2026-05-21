@@ -168,7 +168,56 @@ const playlists = [
         name: "Playlist 2",
         thumbnail: "https://i.pinimg.com/1200x/21/1c/35/211c354548a872dc63622437075c772b.jpg",
         songs: [
-              
+            {
+                title: "Wind Of Change - Scorpions",
+                source: "Scorpions - Wind Of Change.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273787674b6a114f98cad6f834b"
+            },
+            {
+                title: "Per sempre sì - Sal Da Vinci",
+                source: "Sal Da Vinci - Per sempre sì.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e029fee241bfd5d68e758b4e4e5"
+            },
+            {
+                title: "Swing, Swing - The All-American Rejects",
+                source: "The All-American Rejects - Swing, Swing.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273eba2acd1d78fc80ed234af0b"
+            },
+            {
+                title: "drop dead - Olivia Rodrigo",
+                source: "Olivia Rodrigo - drop dead.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e0217f8ce0b3c99965d9a4482e3"
+            },
+            {
+                title: "Oh My My - Ricky Montgomery",
+                source: "Ricky Montgomery - Oh My My.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e023ccd8778c5a728ff65eb289f"
+            },
+            {
+                title: "Scotty Doesn't Know - Lustra",
+                source: "Lustra - Scotty Doesn't Know.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273ee515815329b81291adae0dd"
+            },
+            {
+                title: "What a Fool Believes - The Doobie Brothers",
+                source: "The Doobie Brothers - What a Fool Believes.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273ba6340ac3b1653b6ea0e5da5"
+            },
+            {
+                title: "One of These Nights - Eagles",
+                source: "Eagles - One of These Nights.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b2735d0a8e54aba5181c79593b94"
+            },
+            {
+                title: "Hemorrhage (In My Hands) - Fuel",
+                source: "Fuel - Hemorrhage (In My Hands).mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273e02669b28cb76940fc63bed1"
+            },
+                        {
+                title: "Made In Japan - Buck Owens",
+                source: "Buck Owens - Made In Japan.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b2738e5f97a65d6b8baa73c4d58a"
+            },
         ]
     },
     { 
@@ -185,7 +234,7 @@ const playlists = [
         thumbnail: "https://i.pinimg.com/736x/81/db/76/81db76f4fed6412ffd5982e15fcad036.jpg",
         songs: [
 
-            
+
         ]
     }
 ];
