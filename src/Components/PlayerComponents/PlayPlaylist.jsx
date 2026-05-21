@@ -45,6 +45,14 @@ function Playlist({playerid}) {
 
     const playlist = TestPlaylist.find(p => p.id == playerid)
 
+    if (!playlist) {
+        return (
+            <div className="Playlist-Container">
+                <h1>Playlist not found</h1>
+            </div>
+        );
+    }
+
     useEffect(() => {
         if (displayInfo) {
             setPlaylistName(playlist.name)
@@ -246,12 +254,12 @@ function Playlist({playerid}) {
             
             <div className="Title-Container">
                 <img src={TitleWindow} className="TitleWindow"/>
-                <h3 className="TitleText" style={{ fontWeight: "normal" }}>{displayInfo && playlistName || playlist.songs[songCurrent]?.title}</h3>
+                <h3 className="TitleText" style={{ fontWeight: "normal" }}>{displayInfo && playlistName || playlist?.songs?.[songCurrent]?.title}</h3>
             </div>
 
             <div className="Cover-Container">
                 <img src={CoverWindow} className="CoverWindow"/>
-                <img src={displayInfo && playlistThumbnail || playlist.songs[songCurrent]?.art} className="CoverArt"/>
+                <img src={displayInfo && playlistThumbnail || playlist?.songs?.[songCurrent]?.art} className="CoverArt"/>
                 
                 {playerMode == "seek" && (
 
