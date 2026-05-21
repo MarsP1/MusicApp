@@ -11,6 +11,8 @@ import TitleWindow from "../../assets/TitleWindow.svg";
 
 import CoverWindow from "../../assets/CoverWindow.svg";
 import SeekWindow from "../../assets/SeekWindow.svg";
+import VolumeWindow from "../../assets/VolumeWindow.svg";
+import VolumeCircle from "../../assets/VolumeCircle.svg";
 import SeekCircle1 from "../../assets/SeekCircle1.svg";
 import SeekCircle2 from "../../assets/SeekCircle2.svg";
 import SeekCircle3 from "../../assets/SeekCircle3.svg";
@@ -22,20 +24,24 @@ import PlayIcon from "../../assets/PlayButton.svg";
 import PauseButton from "../../assets/PauseButton.svg";
 import ForwardButton from "../../assets/ForwardButton.svg";
 import RightBracket from "../../assets/Right-Bracket.svg";
-import Circles from "../../assets/circles.svg";
+ 
 
 function Playlist({playerid}) {
 
     const audioRef = useRef(null);
-    const [currentSeekCircle, setCurrentSeekCircle] = useState(1);
+    const [playerMode, setPlayerMode] = useState("seek");
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [volume, setVolume] = useState(0.5);
     const [songCurrent, setSongCurrent] = useState(0);
     const [playButtonState, setPlayButtonState] = useState(true);
     const [isPlaying, setIsPlaying] = useState(false);
     const [displayInfo, setDisplayInfo] = useState(true);
     const [playlistName, setPlaylistName] = useState("");
     const [playlistThumbnail, setPlaylistThumbnail] = useState("");
+    const [isShuffle, setIsShuffle] = useState(false);
+    const [shuffledOrder, setShuffledOrder] = useState([]);
+    const [shufflePosition, setShufflePosition] = useState(0);
 
     const playlist = TestPlaylist.find(p => p.id == playerid)
 
@@ -49,28 +55,31 @@ function Playlist({playerid}) {
 
     useEffect(() => {
         if (audioRef.current) {
-            audioRef.current.volume = 0.2;
+            audioRef.current.volume = volume;
         }
 
-    }, []);
+    }, [volume]);
 
-    const seekCircles = {
-        1: SeekCircle1,
-        2: SeekCircle2,
-        3: SeekCircle3
-    };
 
-    const changeSeekCircle = () => {
-        setCurrentSeekCircle(prev => prev == 3 ? 1 : prev + 1);    
-    };
 
     const handleSeek = (e) => {
         const time = Number(e.target.value);
 
-        audioRef.current.currentTime = time;
-        setCurrentTime(time);
+        if (audioRef.current) {
+            audioRef.current.currentTime = time;
+            setCurrentTime(time);
+        }
     };
 
+
+    const handleVolume = (e) => {
+        const newVolume = Number(e.target.value);
+        setVolume(newVolume);
+
+        if (audioRef.current) {
+            audioRef.current.volume = newVolume;
+        }
+    };
 
     const loadSong = async (index) => { 
 
@@ -95,7 +104,7 @@ function Playlist({playerid}) {
 
         setIsPlaying(true);
         setPlayButtonState(false);
-    } 
+    };
 
     const pauseSong = async () => {
         
@@ -103,24 +112,23 @@ function Playlist({playerid}) {
 
         setIsPlaying(false);
         setPlayButtonState(true);
-    }
+    };
     
     const playpauseSong = async() => {
         if (!isPlaying) {
             if (!audioRef.current.src) {
                 await loadSong(songCurrent);
             }
+
             await playSong();
-            setIsPlaying(true);
-            setPlayButtonState(false);
+
     
         } else {
            await pauseSong();
-           setIsPlaying(false);
-           setPlayButtonState(true);
+
             
         }
-    }
+    };
 
     const nextSong = async () => {
         let nextIndex = songCurrent + 1;
@@ -132,7 +140,7 @@ function Playlist({playerid}) {
         if (isPlaying) {
             await audioRef.current.play();
         }
-    };   
+    };
 
     const previousSong = async () => {
         let previousIndex = songCurrent - 1;
@@ -151,6 +159,87 @@ function Playlist({playerid}) {
         }
     };
 
+    const shufflePlaylist = async () => {
+        const order = playlist.songs.map((_, index) => index);
+
+        for (let i = order.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [order[i], order[j]] = [order[j], order[i]];
+        }
+
+        setShuffledOrder(order);
+        setShufflePosition(0);
+        setIsShuffle(true);
+
+        await loadSong(order[0]);
+
+        if (isPlaying) {
+            await audioRef.current.play();
+        }
+    };
+
+    const nextShuffleSong = async () => {
+        const nextPosition = shufflePosition + 1;
+
+        if (nextPosition >= shuffledOrder.length) {
+            setShufflePosition(0);
+            await loadSong(shuffledOrder[0]);
+
+            if (isPlaying) {
+                await audioRef.current.play();
+            }
+
+            return;
+        }
+
+        setShufflePosition(nextPosition);
+        await loadSong(shuffledOrder[nextPosition]);
+
+        if (isPlaying) {
+            await audioRef.current.play();
+        }
+    };
+
+    const previousShuffleSong = async () => {
+        const previousPosition = shufflePosition - 1;
+
+        if (audioRef.current.currentTime > 3) {
+            audioRef.current.currentTime = 0;
+            return;
+        }
+
+        if (previousPosition < 0) {
+            setShufflePosition(0);
+            audioRef.current.currentTime = 0;
+            return;
+        }
+
+        setShufflePosition(previousPosition);
+        await loadSong(shuffledOrder[previousPosition]);
+
+        if (isPlaying) {
+            await audioRef.current.play();
+        }
+    };
+
+    const playNext = async () => {
+        if (isShuffle) {
+            await nextShuffleSong();
+        } else {
+            await nextSong();
+        }
+    };
+
+    const playPrevious = async () => {
+        if (isShuffle) {
+            await previousShuffleSong();
+        } else {
+            await previousSong();
+        }
+    };
+
+
+
     return(
 
         <div className="Playlist-Container">
@@ -163,9 +252,13 @@ function Playlist({playerid}) {
             <div className="Cover-Container">
                 <img src={CoverWindow} className="CoverWindow"/>
                 <img src={displayInfo && playlistThumbnail || playlist.songs[songCurrent]?.art} className="CoverArt"/>
-                <div className="Seek-Container">
-                    <img src={SeekWindow} className="SeekWindow"/>
-                    <img src={seekCircles[currentSeekCircle]} style={{left: `${duration ? (currentTime / duration) * 100 : 0}%`}} className="SeekCircle"/>
+                
+                {playerMode == "seek" && (
+
+                    <div className="Seek-Container">   
+                        <img src={SeekWindow} className="SeekWindow"/> 
+                        <img src={SeekCircle1} style={{left: `${duration ? (currentTime / duration) * 100 : 0}%`}} className="SeekCircle"/>
+                            
                         <input
                             type="range"
                             min="0"
@@ -174,23 +267,56 @@ function Playlist({playerid}) {
                             onChange={handleSeek}
                             className="SeekControl"
                         />
+                    </div>
+                )}
+            
+                {playerMode == "volume" && (
 
-                </div>
+                    <div className="Volume-Container">
+                        <img src={VolumeWindow} className="VolumeWindow" />
+
+                        <div 
+                            style={{ height: `${volume * 100}%` }}className="VolumeTrail">
+                        </div>
+
+                        <img src={VolumeCircle} style={{bottom: `${volume * 100}%`}} className="VolumeCircle"/>
+
+                        <input
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.01"
+                            value={volume}
+                            onChange={handleVolume}
+                            className="VolumeControl"
+                        />
+                        
+                    </div>
+                )}    
+                
             </div>
                 
             <div className="Controls-Container">
                 <audio className="AudioPlayer"
                     ref={audioRef}
-                    onEnded={nextSong}
-                    onTimeUpdate={() => setCurrentTime(audioRef.current.currentTime)}
-                    onLoadedMetadata={() => setDuration(audioRef.current.duration)}
+                    onEnded={playNext}
+                    onTimeUpdate={() => { 
+                        if (audioRef.current) {
+                            setCurrentTime(audioRef.current.currentTime);
+                        }
+                    }}    
+                    onLoadedMetadata={() => {
+                        if (audioRef.current) {
+                            setDuration(audioRef.current.duration);
+                        }
+                    }}
                     preload="auto" 
                     
                  /> 
                 <img className="ControlsWindow" src={ControlsWindow}/>
 
                 <div className="LeftSide-Frame">
-                    <button onClick={previousSong} className="PreviousButton-Button">
+                    <button onClick={playPrevious} className="PreviousButton-Button">
                         <img src={PreviousButton} className="PreviousButton-Icon" />
                     </button>
 
@@ -210,20 +336,33 @@ function Playlist({playerid}) {
                 </div>
           
                 <div className="RightSide-Frame">
-                    <button onClick={nextSong} className="ForwardButton-Button">
+                    <button onClick={playNext} className="ForwardButton-Button">
                         <img src={ForwardButton} className="ForwardButton-Icon"/>
                     </button>
                 
                     <img src={RightBracket} className="RightBracket-Icon"/>
                 
-                    <button onClick={changeSeekCircle} className="Circles-Button">
-                        <img src={Circles} className="Circles-Icon"/>
-                    </button>
+                    <div  className="Circles-Container">
+
+                        <button onClick={() => setPlayerMode("seek")} className="Circles-Button">
+                            <img src={SeekCircle1} className="Seek-Circle"/>
+                        </button>
+
+                        <button onClick={() => setPlayerMode("volume")} className="Circles-Button">
+                            <img src={SeekCircle2} className="Volume-Circle"/>
+                        </button>
+
+                        <button onClick={shufflePlaylist} className="Circles-Button">
+                            <img src={SeekCircle3} className="Shuffle-Circle"/>
+                        </button>
+                            
+                    </div>
                 </div> 
             
             </div>                              
         </div>
-    )
-};
+    );
+}
+
 export default Playlist;
 

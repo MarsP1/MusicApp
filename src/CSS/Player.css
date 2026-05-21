@@ -14,9 +14,6 @@
     -webkit-user-select: none;
 
     top: 7.5px;
-    
-
-    
 }
 
 .Title-Container {
@@ -97,8 +94,6 @@
     width: 100%;
     height: 100%;
 
-    
-
     pointer-events: none;
 }
 
@@ -127,6 +122,75 @@
     pointer-events: none;
 
     z-index: 1;
+}
+
+.Volume-Container {
+    position: relative;   
+
+    width: 8px;          
+    height: 86px;        
+
+    top: 80px;
+    left: 165px
+
+}
+
+.VolumeWindow {
+    position: absolute;
+
+    width: 8px;
+    height: 86px;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+.VolumeCircle {
+    position: absolute;
+
+    left: 50%;
+    
+
+    transform: translate(-50%, 50%);
+
+    width: 16px;                
+    height: 15.53px;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+.VolumeTrail {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 7px;                
+    
+
+    background: #6F8E67;        
+    border-radius: 25px;
+
+    z-index: 3;
+
+    
+}
+
+.VolumeControl {
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    cursor: pointer;
+
+    z-index: 5;
+
+    appearance: slider-vertical;
 }
 
 .Controls-Container {
@@ -185,6 +249,21 @@
     align-items: center;
     flex-direction: column;
 
+}
+.Circles-Container {
+    position: relative;
+    display: inline-flex;
+    
+    right: 2px;
+}
+
+.Seek-Circle {
+    position: relative;
+    left: 5px;
+}
+.Shuffle-Circle {
+    position: relative;
+    right: 5px;
 }
 
 .RightBracket-Icon, .Circles-Button {
