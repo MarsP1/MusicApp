@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import { useRef, useState, useEffect } from "react";
 
 import { convertFileSrc } from "@tauri-apps/api/core";
-import { join } from "@tauri-apps/api/path";
 import { resolveResource } from "@tauri-apps/api/path";
 
 import TestPlaylist from "../../Data/TestPlaylist.jsx";
@@ -90,7 +89,7 @@ function Playlist({playerid}) {
     const loadSong = async (index) => { 
 
         const fileSource = playlist.songs[index].source;
-        const resourcePath = await resolveResource(await join("MP3s", fileSource));
+        const resourcePath = await resolveResource(`MP3s/${fileSource}`);
         const src = convertFileSrc(resourcePath);
 
         audioRef.current.src = src;

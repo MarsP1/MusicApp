@@ -22,6 +22,8 @@ div, img, a {
 }
 
 .TopBar {
+  z-index: 1;
+
   display: flex;
   justify-content: flex-end;
 
@@ -29,6 +31,8 @@ div, img, a {
 }
 
 .CloseWindow {
+  z-index: 2;
+
   display: flex;
   position: relative;
 

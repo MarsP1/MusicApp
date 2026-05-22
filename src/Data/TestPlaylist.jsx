@@ -1,8 +1,8 @@
 const playlists = [
     {
         id: 1,
-        name: "Test",
-        thumbnail: "https://i.pinimg.com/1200x/60/f7/81/60f781946aa41b1c22d755da984f3fa4.jpg",
+        name: "her love",
+        thumbnail: "https://tse1.explicit.bing.net/th/id/OIP.WQV7RGWLNJ9XxSMxvB9BsAHaNJ?cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3",
         songs: [
             {
                 title: "Little Bit - Lykke Li",
@@ -75,7 +75,6 @@ const playlists = [
                 source: "Cafuné - Tek It.mp3",
                 art: "https://i.scdn.co/image/ab67616d0000b273e1bcd643827606eae29cc9c4"
             },
-
             {
                 title: "As the World Caves In - Matt Maltese",
                 source: "Matt Maltese - As the World Caves In.mp3",
@@ -165,58 +164,163 @@ const playlists = [
     },    
     {
         id: 2,
-        name: "Playlist 2",
-        thumbnail: "https://i.pinimg.com/1200x/21/1c/35/211c354548a872dc63622437075c772b.jpg",
+        name: "my heart",
+        thumbnail: "https://i.pinimg.com/videos/thumbnails/originals/12/f2/08/12f208c4a8175123ad3983704210f7f0.0000000.jpg",
         songs: [
             {
-                title: "Wind Of Change - Scorpions",
-                source: "Scorpions - Wind Of Change.mp3",
-                art: "https://i.scdn.co/image/ab67616d0000b273787674b6a114f98cad6f834b"
+                title: "(I Can't) Forget About You - R5",
+                source: "R5 - (I Can't) Forget About You.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b2733b1243ecf2404bdcb4b20ba7"
             },
             {
-                title: "Per sempre sì - Sal Da Vinci",
-                source: "Sal Da Vinci - Per sempre sì.mp3",
-                art: "https://i.scdn.co/image/ab67616d00001e029fee241bfd5d68e758b4e4e5"
+                title: "Cicada - Good Kid",
+                source: "Good Kid - Cicada.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e02efec6510405368ab9d84bba3"
             },
             {
-                title: "Swing, Swing - The All-American Rejects",
-                source: "The All-American Rejects - Swing, Swing.mp3",
-                art: "https://i.scdn.co/image/ab67616d0000b273eba2acd1d78fc80ed234af0b"
+                title: "Just the Way You Are - Bruno Mars",
+                source: "Bruno Mars - Just the Way You Are.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273f6b55ca93bd33211227b502b"
             },
             {
-                title: "drop dead - Olivia Rodrigo",
-                source: "Olivia Rodrigo - drop dead.mp3",
-                art: "https://i.scdn.co/image/ab67616d00001e0217f8ce0b3c99965d9a4482e3"
+                title: "Summer on You - PRETTYMUCH",
+                source: "PRETTYMUCH - Summer on You.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273bb6b581c8b24164a395df12d"
             },
             {
-                title: "Oh My My - Ricky Montgomery",
-                source: "Ricky Montgomery - Oh My My.mp3",
-                art: "https://i.scdn.co/image/ab67616d00001e023ccd8778c5a728ff65eb289f"
+                title: "Burning For You - Jeremiah Miller",
+                source: "Jeremiah Miller - Burning For You.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273b9f3e667d8c5f9795cc0277a"
             },
             {
-                title: "Scotty Doesn't Know - Lustra",
-                source: "Lustra - Scotty Doesn't Know.mp3",
-                art: "https://i.scdn.co/image/ab67616d0000b273ee515815329b81291adae0dd"
+                title: "Sugar - Maroon 5",
+                source: "Maroon 5 - Sugar.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273442b53773d50e1b5369bb16c"
             },
             {
-                title: "What a Fool Believes - The Doobie Brothers",
-                source: "The Doobie Brothers - What a Fool Believes.mp3",
-                art: "https://i.scdn.co/image/ab67616d0000b273ba6340ac3b1653b6ea0e5da5"
+                title: "boy for the weekend - marc indigo",
+                source: "marc indigo - boy for the weekend.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b2733ca247ffed7e3d0621802983"
             },
             {
-                title: "One of These Nights - Eagles",
-                source: "Eagles - One of These Nights.mp3",
-                art: "https://i.scdn.co/image/ab67616d0000b2735d0a8e54aba5181c79593b94"
+                title: "Payphone - Maroon 5, Wiz Khalifa",
+                source: "Maroon 5, Wiz Khalifa - Payphone.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b2733119f490f02fcee6514e8604"
             },
             {
-                title: "Hemorrhage (In My Hands) - Fuel",
-                source: "Fuel - Hemorrhage (In My Hands).mp3",
-                art: "https://i.scdn.co/image/ab67616d0000b273e02669b28cb76940fc63bed1"
+                title: "Faster Car - Loving Caliber",
+                source: "Loving Caliber - Faster Car.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273fb31e82b5f6ff9e5ed448dd4"
             },
             {
-                title: "Made In Japan - Buck Owens",
-                source: "Buck Owens - Made In Japan.mp3",
-                art: "https://i.scdn.co/image/ab67616d0000b2738e5f97a65d6b8baa73c4d58a"
+                title: "Sunday Morning - Maroon 5",
+                source: "Maroon 5 - Sunday Morning.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b27392f2d790c6a97b195f66d51e"
+            },
+            {
+                title: "Count On You - Jeremiah Miller",
+                source: "Jeremiah Miller - Count On You.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e02627ad93dec42652f131eae71"
+            },
+            {
+                title: "Atlas - Good Kid",
+                source: "Good Kid - Atlas.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e02bc352a0a71db080e1f27a482"
+            },
+            {
+                title: "SNAKE EYES - Aries",
+                source: "Aries - SNAKE EYES.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273594e1e0cd39414e9659acd24"
+            },
+            {
+                title: "Summer Uptown - jasontheween",
+                source: "jasontheween - Summer Uptown.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b2738737befd2e98d1ecad3abddb"
+            },
+            {
+                title: "Fresh Eyes - Andy Grammer",
+                source: "Andy Grammer - Fresh Eyes.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273d3ef562e372ed65d6f37e991"
+            },
+            {
+                title: "Sex and Lemonade - Nicky Youre, LAIKI",
+                source: "Nicky Youre, LAIKI - Sex and Lemonade.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273ecd970d1d2623b6c7fc6080c"
+            },
+            {
+                title: "First Time - ILLENIUM, iann dior",
+                source: "ILLENIUM, iann dior - First Time.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b27383cd2bbbface6537f1bb1083"
+            },
+            {
+                title: "Summertime - NEFFEX",
+                source: "NEFFEX - Summertime.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e02419fb15e0576d909f3ce593b"
+            },
+            {
+                title: "Dance Class - Good",
+                source: "Good  - Dance Class.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273e6988b763326740b2bb46650"
+            },
+            {
+                title: "Sunkissed - khai dreams",
+                source: "khai dreams - Sunkissed.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e02beb9f908999e5b2e3dbe2ca6"
+            },
+            {
+                title: "Like No One Does - Jake Scott",
+                source: "Jake Scott - Like No One Does.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e02beffb622c26cd321ec6131a2"
+            },
+            {
+                title: "Pass Me By - R5",
+                source: "R5 - Pass Me By.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b2733b1243ecf2404bdcb4b20ba7"
+            },
+            {
+                title: "Give Me a Kiss - Crash Adams",
+                source: "Crash Adams - Give Me a Kiss.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273b3fad5cb6fdb92f495096475"
+            },
+            {
+                title: "When It Flows - NEFFEX",
+                source: "NEFFEX - When It Flows.mp3",
+                art: "https://i.scdn.co/image/ab67616d00001e02c386b942dc0d3a7601891696"
+            },
+            {
+                title: "Joyride - Stellar",
+                source: "Stellar - Joyride.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273a88bca0dd47151a8253a2349"
+            },
+            {
+                title: "Never Go Wrong - Nicky Youre, david hugo",
+                source: "Nicky Youre, david hugo - Never Go Wrong.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273ecd970d1d2623b6c7fc6080c"
+            },
+            {
+                title: "Like I Do - J.Tajor",
+                source: "J.Tajor - Like I Do.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273e649cde12610c45e05a10d44"
+            },
+            {
+                title: "Delusional - Fash",
+                source: "Fash - Delusional.mp3",
+                art: "https://t2.genius.com/unsafe/258x258/https%3A%2F%2Fimages.genius.com%2F4b1942fec427a98caabe4733dfbb802f.680x680x1.jpg"
+            },
+            {
+                title: "New Beginnings - NEFFEX",
+                source: "NEFFEX - New Beginnings.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273b225f6865a01785855f2b183"
+            },
+            {
+                title: "Perfect - Ed Sheeran",
+                source: "Ed Sheeran - Perfect.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96"
+            },
+            {
+                title: "Shut Up and Dance - WALK THE MOON",
+                source: "WALK THE MOON - Shut Up and Dance.mp3",
+                art: "https://i.scdn.co/image/ab67616d0000b273fc39eb9eb3f3824a58f338dc"
             },
         ]
     },

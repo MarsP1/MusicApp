@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "MusicApp",
+  "productName": "frog",
   "version": "1.0.0",
-  "identifier": "com.mars.musicapp",
+  "identifier": "com.mars.frog",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173/",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "MusicApp",
+        "title": "frog",
         "width": 400,
         "height": 600,
         "decorations": false,
